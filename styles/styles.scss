@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+html {
+  height: 100%;
+}
+i {
+  pointer-events: none;
+}
+
+body {
+  background: linear-gradient(#002350, #b7e8ff);
+  background-repeat: no-repeat;
+
+  header {
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin: 2rem 0rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: underline;
+    }
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    height: 80vh;
+    margin: 0 auto;
+    section.add {
+      min-width: 60vw;
+    }
+    section.list {
+      background-color: rgba(255, 255, 255, 0.788);
+      border-radius: 20px;
+      min-width: 60vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2rem;
+      .todo {
+        -webkit-box-shadow: 0 10px 6px -6px #777;
+        -moz-box-shadow: 0 10px 6px -6px #777;
+        box-shadow: 0 10px 6px -6px #777;
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+        margin: 0.5rem 0rem;
+        transition: all 0.1s ease;
+
+        .todoText {
+          padding: 0.5rem 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-color: #faf3ce;
+          border: 1px solid rgb(148, 74, 9);
+          border-radius: 5px;
+          width: 100%;
+          p {
+            margin: auto 1.5rem;
+          }
+        }
+        .todoBtn {
+          display: flex;
+          button {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 5px;
+            transition: 0.2s;
+          }
+          .check {
+            background-color: white;
+            color: rgb(0, 121, 0);
+            border: 2px solid rgb(0, 121, 0);
+            &:hover {
+              background-color: #198754;
+              color: white;
+            }
+          }
+          .del {
+            background-color: white;
+            color: rgb(204, 0, 0);
+            border: 2px solid rgb(131, 0, 0);
+            &:hover {
+              background-color: rgb(131, 0, 0);
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.down {
+  text-decoration: line-through;
+  opacity: 0.3;
+  text-decoration-thickness: 0.2rem;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes scaleDown {
+  to {
+    transform: scale(0);
+  }
+}
+@media screen and (max-width: 760px) {
+  body {
+    main {
+      section.list {
+        min-width: 90vw;
+      }
+    }
+  }
+}
